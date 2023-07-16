@@ -8,7 +8,7 @@ app.use(express.json());
 
 // Define the Post class object
 class Post {
-  id = Math.floor(Math.random() * 1000) + 1000;
+  _id = Math.floor(Math.random() * 1000) + 1000;
 
   constructor(title, author, content) {
     this.title = title;
@@ -61,7 +61,7 @@ app
 
     // Check if the post with given id exists
     const postFound = posts.find((post) => {
-      return post.id === Number(postId);
+      return post._id === Number(postId);
     });
     if (!postFound) {
       return res.status(404).json({
@@ -80,7 +80,7 @@ app
 
     // Check if the post with given id exists
     const postFound = posts.find((post) => {
-      return post.id === Number(postId);
+      return post._id === Number(postId);
     });
     if (!postFound) {
       return res.status(404).json({
@@ -103,7 +103,7 @@ app
 
     // Check if the post with given id exists
     const postFoundIndex = posts.findIndex((post) => {
-      return post.id === Number(postId);
+      return post._id === Number(postId);
     });
     if (postFoundIndex < 0) {
       return res.status(404).json({
@@ -113,7 +113,7 @@ app
 
     // Remove the post from the database
     posts = posts.filter((post) => {
-      return post.id !== Number(postId);
+      return post._id !== Number(postId);
     });
 
     res.status(202).json({

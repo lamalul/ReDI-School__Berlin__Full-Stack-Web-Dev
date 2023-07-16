@@ -3,7 +3,7 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res, next) => {
-  res.send("Hello World!");
+  res.send("You are in Home page!");
 });
 
 app.get("/login", (req, res, next) => {

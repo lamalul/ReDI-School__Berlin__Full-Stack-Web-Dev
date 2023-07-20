@@ -58,7 +58,7 @@
 - Who — Any one that would like to search for a pet and adopt it.
 - What — The user can adopt pets by simply creating a user account and let it be verified by admin.
 - When — Anytime around the clock, 24/7, without any time restrictions.
-- Where — Anywhere that there is an access to the internet, using any device that has a web broswer installed on it, such as a laptop, a tablet or a mobile.
+- Where — Anywhere that there is an access to the internet, using any device that has a web browser installed on it, such as a laptop, a tablet or a mobile.
 - Why — There are a huge number of animals around the world that are still not adopted and/or are living under bad conditions and may need our help. This platform can help those people who are willing to adopt animals and take the responsibility to raise and protect them within their family.
 
 ## USER STORIES

@@ -149,6 +149,7 @@ app
     });
   });
 
+// Define Sign up route
 app
   .route("/signup") // Route: /signup
   .post(cors(corsOptions), validatorSignUp, (req, res, next) => {
@@ -176,6 +177,7 @@ app
     });
   });
 
+// Run the Server
 app.listen(PORT, () => {
   console.log(`The server is listening on port ${PORT}`);
 });

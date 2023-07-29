@@ -15,7 +15,6 @@ const hashingSalt = +process.env["HASHING_SALT"] || 12;
 const whitelist = ["http://main-server.com"];
 const corsOptions = {
   origin: function (origin, callback) {
-    console.log(origin);
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {

@@ -1,3 +1,5 @@
+"use strict"; // Defines that JavaScript code should be executed in "strict mode".
+
 const express = require("express"),
   cors = require("cors");
 

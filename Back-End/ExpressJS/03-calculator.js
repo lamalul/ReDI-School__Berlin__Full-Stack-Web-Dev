@@ -1,3 +1,5 @@
+"use strict"; // Defines that JavaScript code should be executed in "strict mode".
+
 const express = require("express");
 const app = express();
 const PORT = 3000;

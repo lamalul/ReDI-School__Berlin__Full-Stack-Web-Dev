@@ -1,3 +1,4 @@
+"use strict"; // Defines that JavaScript code should be executed in "strict mode".
 require("dotenv").config();
 
 const express = require("express"),

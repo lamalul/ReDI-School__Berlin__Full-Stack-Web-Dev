@@ -1,3 +1,5 @@
+"use strict"; // Defines that JavaScript code should be executed in "strict mode".
+
 const express = require("express"),
   path = require("path");
 const app = express();

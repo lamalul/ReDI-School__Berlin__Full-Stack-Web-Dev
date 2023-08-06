@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
 
   // Check if the required parameters are given
   if (!fname || !lname) {
-    res.statusCode = 404;
+    res.statusCode = 400;
     res.setHeader("Content-Type", "text/plain");
     return res.end("First name and/or last name are missing!");
   }

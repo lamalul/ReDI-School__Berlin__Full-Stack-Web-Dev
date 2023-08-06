@@ -1,4 +1,4 @@
-exports.greetUser = function () {
-  const message = "Welcome to our website!";
+exports.greetUser = function (fname, lname) {
+  const message = `Hello dear ${fname} ${lname}. Welcome to our website!`;
   return message;
 };

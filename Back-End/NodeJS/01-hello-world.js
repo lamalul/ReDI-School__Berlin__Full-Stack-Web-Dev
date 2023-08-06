@@ -1,6 +1,6 @@
 const http = require("http");
 
-// Define constants
+// Define the constants
 const HOSTNAME = "127.0.0.1",
   PORT = 3000;
 
@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   res.end("Hello World");
 });
 
-// Run the server on PORT at HOSTNAME defined above.
+// Run the server on on PORT at HOSTNAME defined above.
 server.listen(PORT, HOSTNAME, () => {
   console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
 });

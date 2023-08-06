@@ -10,14 +10,14 @@ const HOSTNAME = "127.0.0.1",
   LOG_PATH = "data/log.txt";
 
 // Define an Event Emitter as logger
-const logEventEmitter = new events.EventEmitter("logger");
-logEventEmitter.on("init-logger", () => {
+const loggerEE = new events.EventEmitter("logger");
+loggerEE.on("init-logger", () => {
   const logFileExists = fs.existsSync(LOG_PATH);
   if (logFileExists) {
     fs.unlinkSync(LOG_PATH);
   }
 });
-logEventEmitter.on("user-logged-in", (fname, lname) => {
+loggerEE.on("user-logged-in", (fname, lname) => {
   const now = new Date().toLocaleString();
   const logMessage = `${now} \t User logged in \t Info: First name: ${fname}, Last name: ${lname}\n`;
   fs.appendFile(LOG_PATH, logMessage, (err) => {
@@ -27,7 +27,7 @@ logEventEmitter.on("user-logged-in", (fname, lname) => {
   });
 });
 
-// Create a http server
+// Create the http server
 const server = http.createServer((req, res) => {
   const { fname, lname } = url.parse(req.url, true).query; // for example: http://localhost:3000/?fname=David&lname=Ross
 
@@ -46,11 +46,11 @@ const server = http.createServer((req, res) => {
   res.end(message);
 
   // Trigger the logger event emitter
-  logEventEmitter.emit("user-logged-in", fname, lname);
+  loggerEE.emit("user-logged-in", fname, lname);
 });
 
 // Run the server on PORT at HOSTNAME defined above.
 server.listen(PORT, HOSTNAME, () => {
-  logEventEmitter.emit("init-logger");
+  loggerEE.emit("init-logger");
   console.log(`Server running at http://${HOSTNAME}:${PORT}/`);
 });
